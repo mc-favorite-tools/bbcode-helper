@@ -1,0 +1,40 @@
+{
+  "name": "bbcode-helper",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build -c vite.config.prod.ts",
+    "build:watch": "tsc && vite build --watch",
+    "preview": "vite preview"
+  },
+	"author": {
+		"name": "hans000",
+		"email": "hhance@163.com"
+	},
+	"repository": {
+		"url": "https://github.com/hans000/markdown-to-bbcode.git"
+	},
+	"bugs": {
+		"url": "https://github.com/hans000/markdown-to-bbcode/issues"
+	},
+  "dependencies": {
+    "@editorjs/editorjs": "^2.27.2",
+    "@editorjs/table": "^2.2.2",
+    "clsx": "^1.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.1.0",
+    "editorjs-table": "^1.4.10",
+    "less": "^4.1.3",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0",
+    "vite-plugin-banner": "^0.7.0",
+    "vite-plugin-css-injected-by-js": "^2.1.0"
+  }
+}
