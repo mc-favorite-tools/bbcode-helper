@@ -44,6 +44,7 @@ export default defineConfig({
                 compact: true,
                 name: 'index.js',
                 format: 'iife',
+                dir: './dist/' + pkg.version,
                 globals: {
                     'react': 'React',
                     'react-dom': 'ReactDOM',

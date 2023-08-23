@@ -41,6 +41,17 @@ export default function App() {
     const activeNodeRef = useRef<HTMLElement | null>(null)
     const maskRef = useRef<HTMLDivElement | null>(null)
     const pickedRef = useRef(false)
+    const [running, setRunning] = useState(true)
+
+    useEffect(() => {
+        const tipNode = document.querySelector('#e_tip')
+        const container = tipNode!.parentElement
+        const node = document.createElement('a')
+        node.innerText = '启用/关闭 | '
+        node.href = 'javascript:;'
+        container!.insertBefore(node, tipNode)
+        node.addEventListener('click', () => setRunning(r => !r))
+    }, [])
 
     useEffect(() => {
         const observer = new MutationObserver((mutationsList) => {
@@ -235,6 +246,9 @@ export default function App() {
     }, [])
 
     function renderBar(type: string) {
+        if (!running) {
+            return null
+        }
         if (type === 'table') {
             const tableRect = nodeRef.current!.getBoundingClientRect()
             const tbody = nodeRef.current!.children[0]
