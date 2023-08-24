@@ -45,12 +45,14 @@ export default function App() {
 
     useEffect(() => {
         const tipNode = document.querySelector('#e_tip')
-        const container = tipNode!.parentElement
-        const node = document.createElement('a')
-        node.innerText = '启用/关闭 | '
-        node.href = 'javascript:;'
-        container!.insertBefore(node, tipNode)
-        node.addEventListener('click', () => setRunning(r => !r))
+        if (tipNode) {
+            const container = tipNode!.parentElement
+            const node = document.createElement('a')
+            node.innerText = '启用/关闭 | '
+            node.href = 'javascript:;'
+            container!.insertBefore(node, tipNode)
+            node.addEventListener('click', () => setRunning(r => !r))
+        }
     }, [])
 
     useEffect(() => {

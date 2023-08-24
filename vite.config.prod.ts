@@ -66,6 +66,7 @@ export default defineConfig({
         banner({
             content: prefix,
             verify: false,
+            outDir: './dist/' + pkg.version,
         }),
         cssInjectedByJsPlugin({
           topExecutionPriority: true
